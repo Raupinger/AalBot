@@ -39,6 +39,9 @@ jspm_packages/
 # Typescript v1 declaration files
 typings/
 
+config.json
+.DS_Store
+
 # Optional npm cache directory
 .npm
 
