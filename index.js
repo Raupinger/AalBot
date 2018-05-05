@@ -4,7 +4,8 @@ const client = new discord.Client();
 var channel = client.channels.get(channelID);
 let months =['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September' ,'Oktober', 'November', 'Dezember'];
 
-let exp = RegExp(':Aal:');
+let exp1 = RegExp(':aal:');
+let exp2 = RegExp(':Aal2:');
 
 client.on('ready', () => {
           date = new Date();
@@ -14,7 +15,7 @@ client.on('ready', () => {
           });
 
 client.on('message', message => {
-          if (exp.test(message.content)) {
+          if (exp1.test(message.content) || exp2.test(message.content)) {
           react(message.author, ' brutal geworfen');
           }
           })
@@ -44,7 +45,7 @@ client.on('raw', async event => {
 //this is mine
 client.on('messageReactionAdd', (reaction, user) => {
           console.log(reaction)
-          if (exp.test(reaction.emoji.toString())) {
+          if (exp1.test(reaction.emoji.toString()) || exp2.test(reaction.emoji.toString())) {
           react(user, 'grausam an eine Nachricht angetackert');
           }
           })
