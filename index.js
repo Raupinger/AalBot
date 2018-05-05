@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
           if (exp.test(message.content)) {
-          react(message.author, ' brutal geworfen.');
+          react(message.author, ' brutal geworfen');
           }
           })
 // this code is copied from https://github.com/discordjs/guide/tree/master/code_samples/popular-topics/reactions creator is Sanctuary Danktuary
