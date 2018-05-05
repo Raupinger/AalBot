@@ -2,5 +2,5 @@
     "token": "token goes here",
     "males": ["Aalexander", "Aalbert", "Aalfred", "Samueal", "Adriaaln", "Manueal"],
     "females": ["Aalgelina", "Juliaal", "Aalexa", "Ealmily","Eallena", "Aalina"],
-    "channelID": "client id here"
+    "channelID": "target"
 }

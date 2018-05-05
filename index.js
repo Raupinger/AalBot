@@ -52,7 +52,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 client.on('disconnect', () => {
           date = new Date();
-          console.log('disconnected at' + date.toLocalTimeString());
+          console.log('disconnected at' + date);
           });
 
 client.on('error', error => {
@@ -81,14 +81,15 @@ function react(author, crime) {
         partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
         console.log('female');
     }
-    let hours = date.getHours().toString();
+    let hours = date.getMinutes().toString()
     let minutes = date.getMinutes().toString();
+    console.log(date.getMinutes());
     if (date.getMinutes() < 10){
         minutes = '0' + minutes;
     }
     if (date.getHours() < 10){
         hours = '0' + hours;
     }
-    channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
+    channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ hours + ':' + minutes +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
     
 }
