@@ -57,7 +57,7 @@ function react(author, crime) {
                           partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
                           console.log('female');
                           }
-                          channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
+                          channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
     
 
 }
