@@ -52,7 +52,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 client.on('disconnect', () => {
           date = new Date();
-          console.log('disconnected at' + date.toLocalTimeString());
+          console.log('disconnected at' + date);
           });
 
 client.on('error', error => {
