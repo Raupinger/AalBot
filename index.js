@@ -65,22 +65,29 @@ client.login(token);
 function react(author, crime) {
 
     
-                          let date = new Date();
-                          let partner = '**FEHLER**';
-                          let name = '**FEHLER**';
-                          let male = true;
-                          if (Math.random() > 0.5){
-                          male = true;
-                          partner = 'seiner Frau ' + females[Math.floor(Math.random()*6)];
-                          name = males[Math.floor(Math.random()*6)];
-                          console.log('male');
-                          } else {
-                          male = false;
-                          name = females[Math.floor(Math.random()*6)];
-                          partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
-                          console.log('female');
-                          }
-                          channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
+    let date = new Date();
+    let partner = '**FEHLER**';
+    let name = '**FEHLER**';
+    let male = true;
+    if (Math.random() > 0.5){
+        male = true;
+        partner = 'seiner Frau ' + females[Math.floor(Math.random()*6)];
+        name = males[Math.floor(Math.random()*6)];
+        console.log('male');
+    } else {
+        male = false;
+        name = females[Math.floor(Math.random()*6)];
+        partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
+        console.log('female');
+    }
+    let hours = date.getHours().toString();
+    let minutes = date.getMinutes().toString();
+    if (date.getMinutes() < 10){
+        minutes = '0' + minutes;
+    }
+    if (date.getHours() < 10){
+        hours = '0' + hours;
+    }
+    channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
     
-
 }
