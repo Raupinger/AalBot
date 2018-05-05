@@ -4,7 +4,8 @@ const client = new discord.Client();
 var channel = client.channels.get(channelID);
 let months =['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September' ,'Oktober', 'November', 'Dezember'];
 
-let exp = RegExp(':Aal:');
+let exp1 = RegExp(':aal:');
+let exp2 = RegExp(':Aal2:');
 
 client.on('ready', () => {
           date = new Date();
@@ -14,7 +15,7 @@ client.on('ready', () => {
           });
 
 client.on('message', message => {
-          if (exp.test(message.content)) {
+          if (exp1.test(message.content) || exp2.test(message.content)) {
           react(message.author, ' brutal geworfen');
           }
           })
@@ -44,7 +45,7 @@ client.on('raw', async event => {
 //this is mine
 client.on('messageReactionAdd', (reaction, user) => {
           console.log(reaction)
-          if (exp.test(reaction.emoji.toString())) {
+          if (exp1.test(reaction.emoji.toString()) || exp2.test(reaction.emoji.toString())) {
           react(user, 'grausam an eine Nachricht angetackert');
           }
           })
@@ -80,14 +81,19 @@ function react(author, crime) {
         partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
         console.log('female');
     }
-    let hours = date.getHours().toString();
+    let hours = date.getMinutes().toString()
     let minutes = date.getMinutes().toString();
+    console.log(date.getMinutes());
     if (date.getMinutes() < 10){
         minutes = '0' + minutes;
+        //debug
+        console.log(minutes);
     }
     if (date.getHours() < 10){
         hours = '0' + hours;
+        //debug
+        console.log(hours);
     }
-    channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ date.getHours() + ':' + date.getMinutes() +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
+    channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ hours + ':' + minutes +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
     
 }
