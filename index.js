@@ -86,13 +86,9 @@ function react(author, crime) {
     console.log(date.getMinutes());
     if (date.getMinutes() < 10){
         minutes = '0' + minutes;
-        //debug
-        console.log(minutes);
     }
     if (date.getHours() < 10){
         hours = '0' + hours;
-        //debug
-        console.log(hours);
     }
     channel.send('Am ' + date.getDate() + '.' + months[date.getMonth()] + ' ' + date.getFullYear() +' um '+ hours + ':' + minutes +' wurde '+ name +' von ' + author.toString() + ' ' + crime + '. Schäm dich ' + author.toString() + '! Wir versichern den Eltern '+ males[Math.floor(Math.random()*6)] +' und '+ females[Math.floor(Math.random()*6)] +' sowie ' + partner +' und den Kindern unser tiefstes Beileid.');
     
