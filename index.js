@@ -81,8 +81,8 @@ function react(author, crime) {
         partner = 'ihrem Mann ' + males[Math.floor(Math.random()*6)];
         console.log('female');
     }
-    let hours = date.getMinutes().toString()
-    let minutes = date.getHours().toString();
+    let hours = date.getHours().toString()
+    let minutes = date.getMinutes().toString();
     console.log(date.getMinutes());
     if (date.getMinutes() < 10){
         minutes = '0' + minutes;
