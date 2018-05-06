@@ -82,7 +82,7 @@ function react(author, crime) {
         console.log('female');
     }
     let hours = date.getMinutes().toString()
-    let minutes = date.getMinutes().toString();
+    let minutes = date.getHours().toString();
     console.log(date.getMinutes());
     if (date.getMinutes() < 10){
         minutes = '0' + minutes;
